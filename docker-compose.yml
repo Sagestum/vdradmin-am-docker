@@ -1,0 +1,31 @@
+version: "3.3"
+services:
+  vdr:
+    image: qnib/plain-vdr
+    networks: ["hostnet"]
+    volumes:
+     - /srv/video:/var/lib/video
+    environment:
+      - VDR_VNSI_PORT=34890 
+      - SVDRP_PORT=6419 
+      - TZ=Europe/Berlin
+    #ports:
+    #  - 16419:16419/tcp 
+    #  - 44890:44890/tcp
+    #  - 1900:1900/udp
+    #  - 44705:44705/udp
+    #  - 44706:44706/udp
+  vdradmin:
+    image: qnib/plain-vdradmin
+    networks: ["hostnet"]
+    volumes:
+     - /srv/video:/var/lib/video
+    environment:
+      - TZ=Europe/Berlin
+      - SVDRP_PORT=6419 
+      - VDRADMIN_PORT=8001
+
+networks:
+  hostnet:
+    external:
+      name: "host"
