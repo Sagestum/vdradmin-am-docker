@@ -5,7 +5,8 @@ ENV SVDRP_PORT=6419 \
     ENTRYPOINTS_DIR=/opt/qnib/entry
 RUN apt-get update \
  && apt-get install -y vdradmin-am locales locales-all \
- && locale-gen "de_DE.UTF-8"
+ && locale-gen "de_DE.UTF-8" \
+ && dpkg-reconfigure locales
 ENV LC_ALL de_DE.UTF-8
 ENV LANG de_DE.UTF-8
 ENV LANGUAGE de_DE.UTF-8
