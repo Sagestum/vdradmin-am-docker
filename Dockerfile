@@ -12,7 +12,6 @@ RUN apt-get update \
  && locale-gen "de_DE.UTF-8" \
  && echo "LC_ALL=de_DE.UTF-8" >> /etc/environment \
  && echo "LANG=de_DE.UTF-8" >> /etc/environment 
-ENV LANG en_US.UTF-8 
 ENV LC_ALL de_DE.UTF-8
 ENV LANG de_DE.UTF-8
 ENV LANGUAGE de_DE.UTF-8
