@@ -1,4 +1,4 @@
-FROM qnib/dplain-init
+FROM ubuntu:latest
 
 ENV SVDRP_PORT=6419 \
     VDRADMIN_PORT=8001 \
